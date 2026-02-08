@@ -1,93 +1,136 @@
-# React + TypeScript + Tailwind Starter
+🎬 FilmBox
 
-This is a minimal boilerplate with:
-- ⚡ Vite
-- ⚛️ React
-- ⛑ TypeScript
-- 🎨 Tailwind CSS v4
+📌 Project Description
 
-## Getting Started
+FilmBox is a learning-focused movie discovery application built with React, TypeScript, and TailwindCSS.
+The project explores working with multiple APIs, advanced UI patterns (sliders, infinite scroll), and real-world data fetching using React Query.
 
-1. Copy this folder:
-or 
-cp -r react-ts-tailwind-starter my-new-project
-cd my-new-project
-npm install
-npm run dev
+The goal of this project was to experiment, integrate features, and ship, while documenting tradeoffs instead of prematurely refactoring.
 
-2. Start building!
+🛠️ Tech Stack
+
+Frontend: React, TypeScript
+
+Styling: TailwindCSS
+
+APIs:
+
+OMDb API
+
+RapidAPI (movies data)
+
+Data Fetching: React Query (useQuery)
+
+State & Persistence: Local Storage
+
+UI Utilities: Swiper, React Icons, Toast notifications
+
+✨ Features
+
+Search movies by name or keyword using OMDb API
+
+Paginated search results (10 movies per page)
+
+Save / remove movies using bookmark toggle
+
+Persistent watchlist stored in local storage
+
+Movie details view
+
+### 🏠 Homepage Dynamic Sections (hidden on search)
+The homepage features 4 dynamic horizontal carousels powered by **Swiper.js**, which are automatically hidden during active searches to prioritize results.
+
+* Watchlist Highlights – Displays random movies from your saved `LocalStorage` watchlist.
+* Recent & Upcoming – Fetches the latest 10 cinematic releases via `RapidAPI`.
+* Top-Rated English – Lists the top 10 highest-rated English-language films from `RapidAPI`.
+* Random Discovery – A "fun experiment" section generating 10 random movies using the `OMDb API`.
 
 
+Infinite scroll on saved watchlist page
+
+Responsive UI with Sidebar and Navbar
+
+Light / Dark theme support
+
+Toast notifications on save / remove actions
+
+🗂️ Project Structure (High Level)
+src/
+ ├─ components/
+ ├─ pages/
+ ├─ toast/
+ └─ App.tsx
 
 
+Note: File and folder organization can be improved and is documented under limitations.
+
+⚠️ Known Limitations & Tradeoffs
+
+File and folder structure is not fully optimized
+
+Some logic and UI patterns are repeated across components
+
+DRY principles are applied but can be improved further
+
+Some components handle multiple responsibilities
+
+Minor UI bugs are present
+
+Error handling and loading states can be refined
+
+These decisions reflect a focus on feature building and learning, rather than architectural perfection.
+
+🚀 Future Improvements
+
+Refactor component structure and improve separation of concerns
+
+Improve code reuse and abstraction
+
+Resolve existing UI bugs
+
+Enhance accessibility and keyboard navigation
+
+Improve error handling and loading UX
+
+Further optimize performance and caching strategies
+
+This project is a candidate for a future refactor as a flagship portfolio piece.
+
+🌍 Live Demo
+
+👉 [Live Demo Link Here]
+
+🔐 Environment Variables
+
+Create a .env file in the root directory and add:
+
+VITE_OMDB_API_KEY=your_key
+VITE_OMDB_API_URL=your_url
+
+VITE_RAPIDAPI_KEY=your_key
+VITE_RAPIDAPI_HOST=your_host
+VITE_RAPID_API_URL=your_url
 
 
-# React + TypeScript + Vite
+The .env file is excluded via .gitignore.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📚 Learning Outcomes
 
-Currently, two official plugins are available:
+Integrating multiple third-party APIs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Managing async data with React Query
 
-## Expanding the ESLint configuration
+Implementing pagination and infinite scroll
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Building complex, responsive UIs
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Using Swiper for dynamic content presentation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Persisting user data with local storage
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Structuring a mid-sized React + TypeScript application
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📎 Disclaimer
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This is a learning project built during my MERN stack journey.
+The codebase reflects my understanding at the time of development and is intentionally left unrefactored to document real learning progress.
