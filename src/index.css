@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import 'swiper/swiper-bundle.css';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{
+    --animate-fade-in: fade 0.5s ease-in-out;
+    --animate-jump-up: jump 1s linear infinite alternate;
+    --animate-slide-in: slide 1s linear forwards;
+    --animate-shrink-fade: shrink 1s linear forwards;
+    @keyframes fade {
+        from {opacity: 0;}
+        to {opacity:1;}
+    }
+    
+    @keyframes jump {
+        0% {transform : translateY(0px);}
+        100% {transform: translateY(-50px) ;}
+    }
+
+    @keyframes slide {
+        from {opacity: 0; transform: translateX(-100px);}
+        to {opacity: 1; transform: translateX(0px)}
+    }
+
+    @keyframes shrink{
+        from {opacity: 1; transform: scale(1.05)}
+        to {opacity:0; transform: scale(0.3)}
+    }
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-semibold transition duration-300 ease-in-out cursor-pointer ;
+}
+
+@utility btn-primary{
+    @apply bg-blue-600 text-white hover:bg-blue-800 active:bg-blue-900;
+}
+
+@utility btn-outline {
+    @apply border-2 border-blue-600 text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white active:to-blue-800;
+}
+
+@utility btn-ghost{
+    @apply text-white hover:bg-blue-200 active:bg-blue-300;
+}
+
+@utility btn-sm{
+    @apply text-sm px-2 py-1;
+}
+
+@utility btn-md{
+    @apply text-base px-4 py-2;
+}
+
+@utility btn-lg{
+    @apply text-lg px-6 py-4;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    @apply text-blue-400 hover:text-red-500 font-extrabold duration-500 ease-in-out ;}
+
+.swiper-pagination-bullet{
+    @apply bg-yellow-400 hover:bg-red-500 ;
+}
