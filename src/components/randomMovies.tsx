@@ -17,7 +17,7 @@ export function generateRandomNum(num:number){
 export default function RandomMovies() {
 
     const titles = ["Mystery","Live","Law","Survival","Villain","Showdown","Climax","Revenge","War","Inspiring","Uplifting","Hate","Emotional","Sacrifice","Explore","The","True","Romance","Movie","Film","Alien","Psycho","Fight","Love","Life","Hope","Freedom","Truth","Rebellion","Justice","FriendShip","Beauty","Journey","Lost","Secret","Death","Time","Dream","Night","Day","World","Home","Start","Story","Man","Girl","City","Quest","Real","Trip"];
-    const years = ["2020","2021","2022","2023","2024","2025"];
+    const years = ["2020","2021","2022","2023","2024","2025","2026"];
 
     const randomNum = useRef(generateRandomNum(titles.length));
     const randomGenre = titles[randomNum.current];
@@ -37,7 +37,7 @@ export default function RandomMovies() {
 
     return (
         <div className="flex flex-col gap-10 px-2 w-full justify-center" role="region">
-            <h2 className="text-3xl font-bold transition duration-500 ease-in-out">
+            <h2 className="text-xl md:text-3xl font-bold transition duration-500 ease-in-out">
                 Random Movies
                 <div className="bg-gradient-to-bl from-violet-400 to-blue-500 p-0.5 rounded-2xl w-[250px] mr-2 animate-slide-in"></div>
             </h2>

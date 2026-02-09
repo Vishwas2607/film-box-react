@@ -29,7 +29,8 @@ export default function RapidApiFetch () {
   const initialGenre = useRef(generateRandomGenre());
   const genres = initialGenre.current;
   const rapidApiUrl = import.meta.env.VITE_RAPID_API_URL
-  const url = `${rapidApiUrl}/titles?titleType=movie&genre=${genres}&limit=10&year=2025`
+  const currentYear = new Date().getFullYear();
+  const url = `${rapidApiUrl}/titles?titleType=movie&genre=${genres}&limit=10&year=${currentYear}`;
 
   const {data,isLoading,error} = useQuery<RapidApiData, Error>({
     queryKey: ["top-rated-movies",genres,url],
@@ -40,13 +41,13 @@ export default function RapidApiFetch () {
 
     return (
         <div className="flex flex-col gap-10 px-2 justify-center w-full">
-            <h2 className="text-3xl font-bold transition duration-500 ease-in-out w-fit">
+            <h2 className="text-xl md:text-3xl font-bold transition duration-500 ease-in-out w-fit">
                 Recent and Upcoming {genres} Movies
                 <div className="bg-gradient-to-bl from-violet-400 to-blue-500 p-0.5 rounded-2xl animate-slide-in"></div>
             </h2>
 
             {isLoading && <Loader />}
-            {error && (<p className="text-lg text-red-600 mx-auto" role="alert" aria-live="assertive">{"Something went wrong, please try again..."}</p>)} 
+            {error && (<p className="text-md md:text-lg text-red-600 mx-auto" role="alert" aria-live="assertive">{"Something went wrong, please try again..."}</p>)} 
             {data && !error && (
                 <div className="w-full px-5">
                   <Swiper

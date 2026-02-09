@@ -22,7 +22,7 @@ export default function ShortWatchList(){
 
     return (
             <div className="flex flex-col justify-center gap-10 p-2 w-full" role="region">
-                <h2 className="text-3xl font-bold transition duration-500 ease-in-out">Your Watchlist
+                <h2 className="text-xl md:text-3xl font-bold transition duration-500 ease-in-out">Your Watchlist
                     <div className="bg-gradient-to-bl from-violet-400 to-blue-500 p-0.5 rounded-2xl w-[250px] animate-slide-in"></div>
                 </h2>
                     {moviesArr && (

@@ -9,8 +9,8 @@ import 'swiper/swiper-bundle.css'
 
 
 export default function TopRatedMovies () {
-  
-  const url = 'https://movie-database-api1.p.rapidapi.com/titles?list=top_rated_english_250&titleType=movie&limit=10&sort=year.decr'
+  const rapidApiUrl = import.meta.env.VITE_RAPID_API_URL;
+  const url = `${rapidApiUrl}/titles?list=top_rated_english_250&titleType=movie&limit=10&sort=year.decr`
   
   const {data,isLoading,error} = useQuery<RapidApiData>({
     queryKey: ["top-rated-english-movies",],
@@ -18,10 +18,10 @@ export default function TopRatedMovies () {
     refetchOnWindowFocus: false,
     retry: 1,
   })
-  console.log(data)
+  
     return (
         <div className="flex flex-col gap-10 px-2 justify-center w-full" role="region">
-            <h2 className="text-3xl font-bold transition duration-500 ease-in-out w-fit">
+            <h2 className="text-xl md:text-3xl font-bold transition duration-500 ease-in-out w-fit">
                 Top Rated English Movies
                 <div className="bg-gradient-to-bl from-violet-400 to-blue-500 p-0.5 rounded-2xl animate-slide-in"></div>
             </h2>
@@ -36,7 +36,8 @@ export default function TopRatedMovies () {
                         breakpoints={{
 
                             640:{
-                                slidesPerView:3,                         },
+                                slidesPerView:3,                         
+                            },
                             768:{
                                 slidesPerView:3,
                             },

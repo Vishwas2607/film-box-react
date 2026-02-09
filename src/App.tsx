@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col min-w-sm'>
   <header className='bg-red-400 dark:bg-gray-700 flex justify-between px-4 py-1 items-center transition-all duration-500 ease-in-out'>
     <button onClick={()=>setOpen(!isOpen)} className='text-4xl h-5 mb-1.5 hover:text-gray-300 text-white inline-flex justify-center items-center md:hidden' title='Open-sidebar' aria-label='Open Sidebar' aria-expanded={isOpen}>≡</button>
     <Sidebar isOpen={isOpen} setIsOpen={setOpen}></Sidebar>
