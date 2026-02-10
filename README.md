@@ -98,7 +98,7 @@ This project is a candidate for a future refactor as a flagship portfolio piece.
 
 🌍 Live Demo
 
-👉 [Live Demo Link Here]
+👉 https://film-box-react.vercel.app/
 
 🔐 Environment Variables
 
